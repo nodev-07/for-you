@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Proposal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Styles */
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background-color: #fecaca;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .yes-button {
+      background-color: #f43f5e;
+      color: white;
+    }
+
+    .yes-button:hover {
+      background-color: #e11d48;
+    }
+
+    .no-button {
+      background-color: #4b5563;
+      color: white;
+    }
+
+    .no-button:hover {
+      background-color: #374151;
+    }
+
+    .response {
+      margin-top: 2rem;
+    }
+
+    .response h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .response p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.25rem;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="proposal">
+      <img src="https://media.tenor.com/RG_lIajbbtQAAAAj/milk-and-mocha.gif" alt="Cute GIF">
+      <h1>Will you be my Valentine? Please bubu..</h1>
+      <div class="buttons">
+        <button class="yes-button" onclick="handleYesClick()">Yes</button>
+        <button class="no-button" onclick="handleNoClick()">No</button>
+      </div>
+    </div>
+
+    <div id="response" style="display: none;">
+      <img src="https://media.tenor.com/tl4tMev7ICEAAAAM/instagram-zefexwoo-shaurya.gif" alt="Happy GIF">
+      <div class="response">
+        <h2>YESH!!! I love you bubu!!</h2>
+        <p>
+          shorry... me nahi vagnar ts prt.. maaf krun de n, pls.Tula hurt nahi kraych a mala.. Bs hya time smjun ghe n, next time pasun me chukli tr tu sang me aikun gheil.. smjav mala, apn krt jau sort. time lagel pn banel me tula pahije tshi.. Pls asa naraz nko rahu n.. sod ata topic to..
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    let noCount = 0;
+    const phrases = [
+      "No",
+      "Pakka?",
+      "Tussi pyar ni krte?",
+      "Please bubu",
+      "Shorry na as ni chidu",
+      "Ami tomake bhalo bhashi n..",
+      "pillu itk ni chidu n..",
+      "kiti vela vicharl me..",
+      "Maan jao na...",
+      "aye nahi aiknar a me..",
+      "bubu i love uh n..",
+      "*crying*",
+      "itk????",
+      "noi yes bol.. ",
+      "shistit proposal accept kr!! pls..:(",
+      "seriously?? shorry n baba..",
+    ];
+
+    function handleYesClick() {
+      document.getElementById("proposal").style.display = "none";
+      document.getElementById("response").style.display = "block";
+    }
+
+    function handleNoClick() {
+      noCount++;
+      const noButton = document.querySelector(".no-button");
+      noButton.textContent = phrases[Math.min(noCount, phrases.length - 1)];
+
+      const yesButton = document.querySelector(".yes-button");
+      yesButton.style.fontSize = `${noCount * 20 + 16}px`;
+    }
+  </script>
+</body>
+</html>
